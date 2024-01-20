@@ -1,0 +1,71 @@
+import math
+import stat
+
+list_a = [10.2, 5.8, 7, 8, 0, 1]
+list_b = [7.2,5,16,9,1,6]
+
+def calculate_mean(values):
+    if len(values) == 0:
+        return None
+    
+    
+    total = 0
+    for value in values:
+        total += value
+    return total/len(values)
+    
+    
+def mean2(values):
+    
+    total = 0
+    for i in range(len(values)):
+        total += values[i]
+        
+        return total/len(values)
+    
+def mean3(values):
+    total = 0
+    for i, v in enumerate(values):
+        total += v
+        return total/ len(values)
+x = [1,2,3,4,5,6,7,8]
+mean = calculate_mean(list_b)
+meas = mean2(x) 
+   
+def mean(values):
+     total = 0
+     i = 0
+     n = len(values)
+     while i < n:
+         total += values[i]
+         i += 1
+         return total / n
+
+print(list_a)
+print(f"mean1: {calculate_mean(list_a)}")
+print(f"mean2: {mean2(list_a)}")
+print(f"mean3: {mean3(list_b)}")
+print(f"mean4: {mean(list_a)}")
+
+
+
+def calculate_sd(numbers):
+    if len(numbers) < 2:
+        return None
+    
+    mean = sum(numbers) / len(numbers)
+    
+    square_diff = sum((x - mean)**2 for x in numbers)
+    
+    variance = square_diff / (len(numbers) - 1)
+    
+    
+    sd = math.sqrt(variance)
+    return sd
+
+a = [22, 35, 19, 29, 15, 29, 12, 38, 29, 26, 27, 27, 35]
+print(calculate_sd(a))
+print(f"mean1: {calculate_sd(list_a)}")
+print(f"mean2: {mean(a)}")
+print(f"mean3: {calculate_sd(list_b)}")
+print(f"mean4: {mean(a)}")
