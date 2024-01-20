@@ -1,0 +1,32 @@
+print('Welcome to Ypay USSD')
+
+create_account = []
+opay = []  # Initialize opay list
+balance = 50,000
+def Ypay_bank():
+    while True:
+        fxns = int(input('1. Create account, 2. Transfer, 3. Airtime, 4. Balance '))
+        if fxns == 1:
+            create_account.append(input('First Name: '))
+            create_account.append(input('Last Name: '))
+            create_account.append(int(input('Phone Number: ')))
+            create_account.append(input('Email: '))
+            create_account.append(int(input('Input BVN: ')))
+            print('Account created successfully')
+            response = input('Do you want another transaction? Yes or No: ')
+            if response.lower() == 'no':
+                break
+        elif fxns == 2:
+            transfer = int(input('1. To Opay, 2. To other banks: '))
+            if transfer == 1:
+                opay.append(input("Account number: "))
+                elo = int(input('Amount: '))
+                nar = input('Narration: ')
+                dep = balance + elo  
+                print("New balance is {:.2f} {}".format(dep, nar))
+            else:
+                print('Functionality for other banks transfer not implemented yet')
+        else:
+            print('Invalid option. Please choose a valid option.')
+
+Ypay_bank()
