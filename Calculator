@@ -1,0 +1,63 @@
+import math
+
+class Calculator:
+    my_dict = {}
+
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def addition(self):
+        return self.x + self.y
+
+    def subtraction(self):
+        return self.x - self.y
+
+    def division(self):
+        if self.y == 0:
+            return 'Undefined'
+        return self.x / self.y
+
+    def multiplication(self):
+        return self.x * self.y
+
+    def power(self):
+        return self.x ** self.y
+
+    def logarithm(self):
+        return math.log(self.x, self.y)
+
+r = int(input('Input: '))
+b = int(input('Input: '))
+c = Calculator(r, b)
+a = c.addition()
+
+call = Calculator(0, 0)  # Create an instance outside the loop
+while True:
+    operation = int(input('1. Add 2. Sub. 3. Div 4. Mul 5. Pow 6. Log 7. Exit: '))
+    if operation == 1:
+        x = int(input('Enter Number1: '))
+        y = int(input('Enter Number2: '))
+        call = Calculator(x, y)
+        print('Answer:', call.addition())
+    elif operation == 2:
+        print("Result:", call.subtraction())
+    elif operation == 3:
+        print("Result:", round(call.division(), 2))
+    elif operation == 4:
+        print("Result:", call.multiplication())
+    elif operation == 5:
+        a = int(input('Enter Num1: '))
+        b = int(input('Enter exponent: '))
+        c = Calculator(a, b)
+        print('Answer:', c.power())
+    elif operation == 6:
+        a = int(input('Enter Num1: '))
+        b = int(input('Enter base: '))
+        c = Calculator(a, b)
+        print('Answer:', c.logarithm())
+    elif operation == 7:
+        print("Exiting!")
+        break
+    else:
+        print("Invalid choice!!")
